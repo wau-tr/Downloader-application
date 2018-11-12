@@ -8,6 +8,7 @@ use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
 use App\Models\Task;
+use App\Enums\TaskStatusEnum;
 
 /**
  * Job for dowloading resource by url of task.
@@ -36,12 +37,12 @@ class ProcessTask implements ShouldQueue
      */
     public function handle( )
     {
-        $this->task->update(['status' => 'downloading']);
+        $this->task->update(['status' => TaskStatusEnum::Downloading]);
         try{
             $this->task
                 ->addMediaFromUrl($this->task->url)
                 ->toMediaCollection('resource');
-            $this->task->update(['status' => 'complete']);
+            $this->task->update(['status' => TaskStatusEnum::Complete]);
         } catch (\Exception $e) {
             $this->failed($e);
         }
@@ -58,7 +59,7 @@ class ProcessTask implements ShouldQueue
     public function failed($exception)
     {
         $this->task
-            ->update(['status' => 'error']);
+            ->update(['status' => TaskStatusEnum::Error]);
     }
   
 }

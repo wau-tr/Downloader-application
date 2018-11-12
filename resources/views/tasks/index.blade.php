@@ -17,8 +17,10 @@
                 <tr>
                     <th scope="row"> {{ $task->id }} </th>
                     <td> {{ $task->status }} </td>
-                    <td> <a class="btn btn-default href" href="{{ $task->getResourceUrl() }}">Link</a> </td>
-            </tr>
+                    @if ($task->getResourceUrl())
+                        <td> <a class="btn btn-default href" href="{{ $task->getResourceUrl() }}">Link</a> </td>
+                    @endif    
+                </tr>
             @empty
                 <tr><td>No tasks.</td></tr>
             @endforelse
