@@ -24,14 +24,9 @@ It should save downloaded urls in storage configured in Laravel (local driver ca
 - no authentication/authorization (no separation by users)
 
 
-## Contributing
+## Notes
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+1. Spent time: 3 hrs. (as I understand it should take about 2 hours)
+2. Poor unit tests. 
 
-## Security Vulnerabilities
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
