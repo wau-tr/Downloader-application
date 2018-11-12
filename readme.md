@@ -28,5 +28,5 @@ It should save downloaded urls in storage configured in Laravel (local driver ca
 
 1. Spent time: 3 hrs. (as I understand it should take about 2 hours)
 2. Poor unit tests. 
-
+3. I'd like to store statuses as integer. But I'm not sure that I should make it in this test challenge. 
 
